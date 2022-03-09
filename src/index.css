@@ -1,27 +1,26 @@
-.header{
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
-    color: white;
-    background: rgb(19, 19, 56);
-    font-size: 300%;
-    padding: 10px;
+.header {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: white;
+  background: rgb(19, 19, 56);
+  font-size: 300%;
+  padding: 10px;
 }
 
-.form{
-    background-color: lightgoldenrodyellow;
+.form {
+  background-color: lightgoldenrodyellow;
 }
 
-.form-submit{
-    background-color: white;
-    padding: 5px;
-    margin: 5px;
-    border-width: 3px;
-
+.form-submit {
+  background-color: white;
+  padding: 5px;
+  margin: 5px;
+  border-width: 3px;
 }
 
-.form-item{
-padding: 5px;
-margin: 5px;
-border-width: 3px;
+.form-item {
+  padding: 5px;
+  margin: 5px;
+  border-width: 3px;
 }
 /*
 
@@ -132,3 +131,12 @@ button.card {
   }
 }
 */
+.classcards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+  border-style: solid;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}

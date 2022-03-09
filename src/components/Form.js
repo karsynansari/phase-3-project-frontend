@@ -7,6 +7,7 @@ const newYogaClassObj = {
   classTime: ""
 };
 
+
 function Form({ poses }) {
   const [newYogaClass, setNewYogaClass] = useState(newYogaClassObj);
 
@@ -37,6 +38,15 @@ function Form({ poses }) {
   }
 
   // console.log(poses)
+
+const poseCardRender = poses.map((p) => {
+  return <PosesDropdown 
+    englishName = {p.english_name}
+    key = {p.id}
+    imgUrl = {p.img_url}
+    sanskritName = {p.sanskrit_name}
+  />
+})
 
   return (
     <div>
@@ -77,7 +87,6 @@ function Form({ poses }) {
             onChange={handleChange}
           />
         </div>
-        <PosesDropdown />
         <input
           className="form-submit"
           type="submit"
@@ -85,6 +94,11 @@ function Form({ poses }) {
           placeholder="Create your Class!"
           onSubmit={handleSubmit}
         />
+        {/* card render */}
+        <ul className='poseCards'>
+          {poseCardRender}
+          </ul>
+        <input className="form-submit" type="submit" value="Submit" placeholder="Create your Class!" onSubmit = {handleSubmit}/>
       </form>
     </div>
   );

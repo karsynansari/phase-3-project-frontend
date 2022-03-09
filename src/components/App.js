@@ -1,8 +1,10 @@
+
 import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import Form from "./Form";
 import ClassContainer from "./ClassContainer";
 const BASE_URL = "http://localhost:9292";
+
 function App() {
   const [poses, setPoses] = useState([]);
   const [yogaClasses, setYogaClasses] = useState([]);
@@ -26,6 +28,7 @@ function App() {
       <Header />
       <Form poses={poses} />
       <ClassContainer yogaclasses={yogaClasses} />
+
     </div>
   );
 }

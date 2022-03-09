@@ -5,16 +5,40 @@ import PosesDropdown from './PosesDropdown'
 
 
 
-function handleChange (e) {
-  console.log(e.target)
-}
 
-function handleSubmit(e) {
-  e.preventDefault()
-  console.log('Clicked')
-} 
 
-function Form() {
+
+function Form( {poses} ) {
+
+console.log(poses)
+
+
+
+
+const poseCardRender = poses.map((poses) => {
+  return <PosesDropdown 
+    englishName = {poses.english_name}
+    key = {poses.id}
+    imgUrl = {poses.img_url}
+    sanskritName = {poses.sanskrit_name}
+  />
+})
+
+  
+
+  function handleChange (e) {
+    console.log(e.target)
+  }
+  
+  function handleSubmit(e) {
+    e.preventDefault()
+    console.log('Clicked')
+  } 
+
+
+
+
+
   return (
     <div>
       <form

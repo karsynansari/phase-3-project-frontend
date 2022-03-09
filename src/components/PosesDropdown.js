@@ -2,9 +2,16 @@ import React from 'react'
 
 
 
-function PosesDropdown() {
+function PosesDropdown( {  englishName, imgUrl, sanskritName } ) {
   return (
-    <div>PosesDropdown</div>
+    <div>
+      {/* card? */}
+      <img src={imgUrl} />
+      English Name: {englishName} <br></br>
+      Sanskrit Name: {sanskritName}
+
+
+    </div>
   )
 }
 

@@ -2,9 +2,6 @@ import React, {useState } from 'react'
 import PosesDropdown from './PosesDropdown'
 
 
-
-
-
 function handleChange (e) {
   console.log(e.target)
 }
@@ -14,7 +11,8 @@ function handleSubmit(e) {
   console.log('Clicked')
 } 
 
-function Form() {
+function Form({poses}) {
+  console.log(poses)
   return (
     <div>
       <form

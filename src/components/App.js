@@ -2,11 +2,7 @@ import React, {useState, useEffect} from 'react'
 import Header from './Header'
 import Form from './Form';
 import ClassContainer from './ClassContainer';
-
-
 const BASE_URL = "http://localhost:9292"
-
-
 function App() {
 
 
@@ -35,7 +31,7 @@ function App() {
     <div>
       <Header />
       <ClassContainer />
-      <Form/>
+      <Form poses = {poses}/>
     </div>
   );
 }

@@ -1,12 +1,16 @@
-import React from 'react'
-import ClassesDepository from './ClassesDepository'
+import React from "react";
+import ClassesDepository from "./ClassesDepository";
 
+function ClassContainer({ yogaclasses }) {
+  console.log(yogaclasses)
 
-
-function ClassContainer() {
+let renderYogaClasses = yogaclasses.map((yogaclass) => ( 
+<ClassesDepository key={yogaclass.id} yogaclass={yogaclass} />));
   return (
-    <div>ClassContainer</div>
-  )
+    <div>
+      <div>{renderYogaClasses}</div>
+    </div>
+  );
 }
 
-export default ClassContainer
+export default ClassContainer;

@@ -2,8 +2,10 @@ import React from 'react'
 
 function Header() {
   return (
-    <div>Header</div>
-  )
+    <div>
+      <h1 className='header'>Fitness Flow</h1>
+    </div>
+  );
 }
 
 export default Header

@@ -1,0 +1,25 @@
+.header{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+    color: white;
+    background: rgb(19, 19, 56);
+    font-size: 300%;
+    padding: 10px;
+}
+
+.form{
+    background-color: lightgoldenrodyellow;
+}
+
+.form-submit{
+    background-color: white;
+    padding: 5px;
+    margin: 5px;
+    border-width: 3px;
+
+}
+
+.form-item{
+padding: 5px;
+margin: 5px;
+border-width: 3px;
+}

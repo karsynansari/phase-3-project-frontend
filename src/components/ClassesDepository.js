@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
 
-function ClassesDepository() {
+function ClassesDepository({ yogaclass }) {
+  console.log(yogaclass);
   return (
-    <div>ClassesDepository</div>
-  )
+    <div>
+      <p>Teacher: {yogaclass.teacher_name}</p>
+      <p>Class: {yogaclass.class_name}</p>
+      <p>Time: {yogaclass.class_time}</p>
+    </div>
+  );
 }
 
-export default ClassesDepository
+export default ClassesDepository;

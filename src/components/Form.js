@@ -6,11 +6,8 @@ import PosesDropdown from './PosesDropdown'
 
 
 
-
-
 function Form( {poses} ) {
 
-console.log(poses)
 
 
 
@@ -24,7 +21,6 @@ const poseCardRender = poses.map((p) => {
   />
 })
 
-// englishName={englishName} imgUrl={imgUrl} sanskritName={sanskritName} 
 
 
   function handleChange (e) {
@@ -35,9 +31,6 @@ const poseCardRender = poses.map((p) => {
     e.preventDefault()
     console.log('Clicked')
   } 
-
-
-
 
 
   return (

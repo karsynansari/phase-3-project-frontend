@@ -1,5 +1,18 @@
-import React from 'react'
+import React, {useState } from 'react'
 import PosesDropdown from './PosesDropdown'
+
+
+
+
+
+function handleChange (e) {
+  console.log(e.target)
+}
+
+function handleSubmit(e) {
+  e.preventDefault()
+  console.log('Clicked')
+} 
 
 function Form() {
   return (
@@ -18,7 +31,7 @@ function Form() {
             name="teacher"
             // value={}
             placeholder="Teacher's name.."
-            // onChange={handleChange}
+            onChange={handleChange}
           />
         </div>
         <div>
@@ -28,11 +41,11 @@ function Form() {
             name="className"
             // value={}
             placeholder="Class name.."
-            // onChange={handleChange}
+            onChange={handleChange}
           />
         </div>
         <PosesDropdown />
-        <input className="form-submit" type="submit" value="Submit"/>
+        <input className="form-submit" type="submit" value="Submit" placeholder="Create your Class!" onSubmit = {handleSubmit}/>
       </form>
     </div>
   );

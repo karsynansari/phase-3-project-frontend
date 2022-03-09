@@ -1,11 +1,10 @@
 import React from "react";
 import ClassesDepository from "./ClassesDepository";
 
-function ClassContainer({ yogaclasses }) {
-  console.log(yogaclasses)
+function ClassContainer({ yogaclasses, setYogaClasses }) {
 
 let renderYogaClasses = yogaclasses.map((yogaclass) => ( 
-<ClassesDepository key={yogaclass.id} yogaclass={yogaclass} />));
+<ClassesDepository key={yogaclass.id} yogaclass={yogaclass} setYogaClasses = {setYogaClasses}/>));
   return (
     <div>
       <div>{renderYogaClasses}</div>

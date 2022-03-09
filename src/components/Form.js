@@ -15,16 +15,17 @@ console.log(poses)
 
 
 
-const poseCardRender = poses.map((poses) => {
+const poseCardRender = poses.map((p) => {
   return <PosesDropdown 
-    englishName = {poses.english_name}
-    key = {poses.id}
-    imgUrl = {poses.img_url}
-    sanskritName = {poses.sanskrit_name}
+    englishName = {p.english_name}
+    key = {p.id}
+    imgUrl = {p.img_url}
+    sanskritName = {p.sanskrit_name}
   />
 })
 
-  
+// englishName={englishName} imgUrl={imgUrl} sanskritName={sanskritName} 
+
 
   function handleChange (e) {
     console.log(e.target)
@@ -68,7 +69,11 @@ const poseCardRender = poses.map((poses) => {
             onChange={handleChange}
           />
         </div>
-        <PosesDropdown />
+        {/* card render */}
+        <ul className='poseCards'>
+          {poseCardRender}
+          </ul>
+         
         <input className="form-submit" type="submit" value="Submit" placeholder="Create your Class!" onSubmit = {handleSubmit}/>
       </form>
     </div>

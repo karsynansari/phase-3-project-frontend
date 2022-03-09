@@ -1,13 +1,14 @@
 import React from 'react'
+import Header from './Header'
+import Form from './Form';
 
 function App() {
   return (
-    <div>App
-        <h1> hello world</h1>
-
-
+    <div>
+      <Header />
+      <Form/>
     </div>
-  )
+  );
 }
 
 export default App

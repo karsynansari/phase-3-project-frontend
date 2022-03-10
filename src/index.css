@@ -4,6 +4,9 @@
   background: rgb(19, 19, 56);
   font-size: 300%;
   padding: 10px;
+  /* border-radius: 6%; */
+  width: 86%;
+  text-align: center;
 }
 
 .form {
@@ -54,7 +57,48 @@
 
 .poseCards{
   background-color: rgb(252, 252, 183);
-  /* border-radius: 50%; */
+  border-radius: 20%;
+}
+
+.classCardContent{
+  text-align: center
+
+}
+.deleteButton{
+  background-color: #6984d1 ; 
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  /* border-radius: 4%; */
+  transition-duration: 0.4s;
+  width: 50%;
+  font-size: 2rem;
+  position: relative;
+  /* right: 100%; */
+}
+
+.deleteButton:hover {
+  background-color: #495b8f; 
+  color: white;
+}
+
+.classcards {
+  display: grid;
+  background-color: #dae8f2;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  grid-auto-rows: minmax(100px, auto);
+  /* border-style: solid; */
+  /* border-radius: 4%; */
+  /* width: 80%; */
+  padding: 1rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  width: 80%;
+  position: relative;
 }
 
 /*
@@ -166,12 +210,3 @@ button.card {
 }
 */
 
-.classcards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
-  border-style: solid;
-  padding: 1rem;
-  margin-bottom: 1rem;
-}

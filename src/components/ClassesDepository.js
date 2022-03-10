@@ -8,15 +8,16 @@ function ClassesDepository({ yogaclass, setYogaClasses }) {
       method: "DELETE", 
     });
     setYogaClasses((currentYogaClasses) => 
-    currentYogaClasses.filter((oneyogaclass) => oneyogaclass.id !== yogaclass.id)
+    currentYogaClasses.filter(
+      (oneyogaclass) => oneyogaclass.id !== yogaclass.id)
     );
   }
   return (
     <div className="classcards">
-      <p>Teacher: {yogaclass.teacher_name}</p>
-      <p>Class: {yogaclass.class_name}</p>
-      <p>Time: {yogaclass.class_time}</p>
-      <button onClick={handleDelete}>Delete</button>
+      <p class="classCardContent">Teacher: {yogaclass.teacher_name}</p>
+      <p class="classCardContent">Class: {yogaclass.class_name}</p>
+      <p class="classCardContent">Time: {yogaclass.class_time}</p>
+      <button class="deleteButton" onClick={handleDelete}>Delete</button>
     </div>
   );
 }

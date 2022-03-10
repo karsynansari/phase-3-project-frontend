@@ -37,8 +37,6 @@ function Form({ poses }) {
     setNewYogaClass(newYogaClassObj);
   }
 
-  // console.log(poses)
-
 const poseCardRender = poses.map((p) => {
   return <PosesDropdown 
     englishName = {p.english_name}
@@ -49,43 +47,48 @@ const poseCardRender = poses.map((p) => {
 })
 
   return (
-    <div>
-      <form
-        onSubmit={handleSubmit}
-        className="form"
-      >
-        <div>
-          <span className="form-name">
-            <h1>New Class Form</h1>
-          </span>
-          <input
-            className="form-item"
-            type="text"
-            name="teacher"
-            value={newYogaClass.teacher}
-            placeholder="Teacher's name.."
-            onChange={handleChange}
-          />
+    <div className="form">
+      <form onSubmit={handleSubmit}>
+        <div className="form-name">
+          <span>New Class Form</span>
         </div>
-        <div>
-          <input
-            className="form-item"
-            type="text"
-            name="nameOfClass"
-            value={newYogaClass.nameOfClass}
-            placeholder="Class name.."
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <input
-            className="form-item"
-            type="text"
-            name="classTime"
-            value={newYogaClass.classTime}
-            placeholder="Class time.."
-            onChange={handleChange}
-          />
+        <div className="form-info">
+          <div className="leftSideOfForm">
+            <div>
+              <input
+                className="form-item"
+                type="text"
+                name="teacher"
+                value={newYogaClass.teacher}
+                placeholder="Teacher's name:"
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <input
+                className="form-item"
+                type="text"
+                name="nameOfClass"
+                value={newYogaClass.nameOfClass}
+                placeholder="Class name:"
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <input
+                className="form-item"
+                type="text"
+                name="classTime"
+                value={newYogaClass.classTime}
+                placeholder="Class time:"
+                onChange={handleChange}
+              />
+            </div>
+          </div>
+          {/* card render */}
+          <div className="rightSideOfForm">
+            <ul className="poseCardForm">{poseCardRender}</ul>
+          </div>
         </div>
         <input
           className="form-submit"
@@ -94,11 +97,6 @@ const poseCardRender = poses.map((p) => {
           placeholder="Create your Class!"
           onSubmit={handleSubmit}
         />
-        {/* card render */}
-        <ul className='poseCards'>
-          {poseCardRender}
-          </ul>
-        <input className="form-submit" type="submit" value="Submit" placeholder="Create your Class!" onSubmit = {handleSubmit}/>
       </form>
     </div>
   );

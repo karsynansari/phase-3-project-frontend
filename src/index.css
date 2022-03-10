@@ -9,6 +9,7 @@
 .form {
   background-color: lightgoldenrodyellow;
 }
+
 .form-name{
   font-size: 40px;
   font-weight: 100;
@@ -164,3 +165,13 @@ button.card {
   }
 }
 */
+
+.classcards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+  border-style: solid;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}

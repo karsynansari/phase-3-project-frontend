@@ -1,30 +1,62 @@
-.header{
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
-    color: white;
-    background: rgb(19, 19, 56);
-    font-size: 300%;
-    padding: 10px;
+.header {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: white;
+  background: rgb(19, 19, 56);
+  font-size: 300%;
+  padding: 10px;
 }
 
-.form{
-    background-color: lightgoldenrodyellow;
+.form {
+  background-color: lightgoldenrodyellow;
+}
+.form-name{
+  font-size: 40px;
+  font-weight: 100;
 }
 
-.form-submit{
-    background-color: white;
-    padding: 5px;
-    margin: 5px;
-    border-width: 3px;
-
+.form-submit {
+  background-color: white;
+  padding: 5px;
+  margin: 5px;
+  border-width: 3px;
 }
 
-.form-item{
-padding: 5px;
-margin: 5px;
-border-width: 3px;
+.form-item {
+  padding: 5px;
+  margin: 5px;
+  border-width: 3px;
 }
+
+.form-info {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+}
+
+.leftSideOfForm {
+  margin: 1cm;
+}
+
+.rightSideOfForm {
+  min-width: 550px;
+  max-height: 315px;
+  overflow-y: scroll;
+  }
+
+.poseCardForm {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+  background-color: white;
+  padding: 5%;
+}
+
+.poseCards{
+  background-color: rgb(252, 252, 183);
+  /* border-radius: 50%; */
+}
+
 /*
-
 
 THIS IS THE CODE PEN CSS FOR THE CARD SELECTOR
 

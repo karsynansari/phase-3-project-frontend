@@ -1,14 +1,13 @@
-import React, {useState } from 'react'
-import PosesDropdown from './PosesDropdown'
+import React, { useState } from "react";
+import PosesDropdown from "./PosesDropdown";
 
 const newYogaClassObj = {
-  teacher: "",
-  nameOfClass: "",
-  classTime: ""
+  teacher_name: "",
+  class_name: "",
+  class_time: ""
 };
 
-
-function Form({ poses }) {
+function Form({ poses, setYogaClasses }) {
   const [newYogaClass, setNewYogaClass] = useState(newYogaClassObj);
 
   function handleChange(e) {
@@ -31,20 +30,22 @@ function Form({ poses }) {
     })
       .then((response) => response.json())
       .then((data) =>
-        setNewYogaClass((existingYogaClasses) => [...existingYogaClasses, data])
+        setYogaClasses((existingYogaClasses) => [...existingYogaClasses, data])
       );
 
     setNewYogaClass(newYogaClassObj);
   }
 
-const poseCardRender = poses.map((p) => {
-  return <PosesDropdown 
-    englishName = {p.english_name}
-    key = {p.id}
-    imgUrl = {p.img_url}
-    sanskritName = {p.sanskrit_name}
-  />
-})
+  const poseCardRender = poses.map((p) => {
+    return (
+      <PosesDropdown
+        englishName={p.english_name}
+        key={p.id}
+        imgUrl={p.img_url}
+        sanskritName={p.sanskrit_name}
+      />
+    );
+  });
 
   return (
     <div className="form">
@@ -58,8 +59,8 @@ const poseCardRender = poses.map((p) => {
               <input
                 className="form-item"
                 type="text"
-                name="teacher"
-                value={newYogaClass.teacher}
+                name="teacher_name"
+                value={newYogaClass.teacher_name}
                 placeholder="Teacher's name:"
                 onChange={handleChange}
               />
@@ -68,8 +69,8 @@ const poseCardRender = poses.map((p) => {
               <input
                 className="form-item"
                 type="text"
-                name="nameOfClass"
-                value={newYogaClass.nameOfClass}
+                name="class_name"
+                value={newYogaClass.class_name}
                 placeholder="Class name:"
                 onChange={handleChange}
               />
@@ -78,8 +79,8 @@ const poseCardRender = poses.map((p) => {
               <input
                 className="form-item"
                 type="text"
-                name="classTime"
-                value={newYogaClass.classTime}
+                name="class_time"
+                value={newYogaClass.class_time}
                 placeholder="Class time:"
                 onChange={handleChange}
               />
@@ -102,4 +103,4 @@ const poseCardRender = poses.map((p) => {
   );
 }
 
-export default Form
+export default Form;

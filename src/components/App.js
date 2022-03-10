@@ -26,9 +26,11 @@ function App() {
   return (
     <div>
       <Header />
-      <Form poses={poses} />
-      <ClassContainer yogaclasses={yogaClasses} setYogaClasses={setYogaClasses} />
-
+      <Form poses={poses} setYogaClasses={setYogaClasses} />
+      <ClassContainer
+        yogaclasses={yogaClasses}
+        setYogaClasses={setYogaClasses}
+      />
     </div>
   );
 }

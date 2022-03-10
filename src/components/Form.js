@@ -4,12 +4,12 @@ import PosesDropdown from './PosesDropdown'
 const newYogaClassObj = {
   teacher_name: "",
   class_name: "",
-  class_time: "", 
+  class_time: ""
   // pose_card: []
 };
 
-function Form({ poses, setYogaClasses, onAddYogaClass }) {
-  const [newYogaClass, setNewYogaClass] = useState("");
+function Form({ poses, setYogaClasses }) {
+  const [newYogaClass, setNewYogaClass] = useState(newYogaClassObj);
 
   function handleChange(e) {
     setNewYogaClass((newYogaClassState) => ({

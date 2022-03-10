@@ -16,10 +16,6 @@ function App() {
       .then(setYogaClasses);
   }, []);
 
-  function handleAddYogaClass(newYogaClass) {
-    setYogaClasses([...yogaClasses, newYogaClass]);
-  }
-
   useEffect(() => {
     fetch(BASE_URL + "/poses")
       .then((r) => r.json())
@@ -34,7 +30,6 @@ function App() {
         poses={poses}
         yogaclasses={yogaClasses}
         setYogaClasses={setYogaClasses}
-        onAddYogaClass={handleAddYogaClass}
       />
       <ClassContainer
         yogaclasses={yogaClasses}

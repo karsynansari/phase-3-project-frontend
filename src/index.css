@@ -1,48 +1,66 @@
 .header {
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  color: white;
   background: rgb(19, 19, 56);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  color: white;
   font-size: 300%;
-  padding: 10px;
-}
+  padding-top: 15px;
+  padding-bottom: 20px;
+  text-align: center;
+  min-height: auto;
+  max-width: auto;
+  }
 
 .form {
   background-color: lightgoldenrodyellow;
-}
+  }
 
-.form-name{
+.form-name {
+  text-align: center;
+  padding-bottom: 10px;
+  padding-top: 10px;
   font-size: 40px;
   font-weight: 100;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .form-submit {
   background-color: white;
+  padding-top: 25px;
   padding: 5px;
+  margin-bottom: 10px;
   margin: 5px;
   border-width: 3px;
-}
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
 
 .form-item {
-  padding: 5px;
-  margin: 5px;
+  padding: 10px;
+  margin: 10px;
   border-width: 3px;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .form-info {
   display: grid;
   grid-gap: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  font-size: 18px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .leftSideOfForm {
   margin: 1cm;
-}
+  }
 
 .rightSideOfForm {
-  min-width: 550px;
-  max-height: 315px;
+  min-width: 500%;
+  max-height: 250px;
   overflow-y: scroll;
-  }
+  text-align: center;
+  background-color: rgb(145, 211, 255);
+  padding-top: 10px;
+}
 
 .poseCardForm {
   display: grid;
@@ -52,7 +70,7 @@
   padding: 5%;
 }
 
-.poseCards{
+.poseCards {
   background-color: rgb(252, 252, 183);
   /* border-radius: 50%; */
 }

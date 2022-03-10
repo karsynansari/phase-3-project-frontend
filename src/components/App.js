@@ -16,6 +16,10 @@ function App() {
       .then(setYogaClasses);
   }, []);
 
+  function handleAddYogaClass(newYogaClass) {
+    setYogaClasses([...yogaClasses, newYogaClass]);
+  }
+
   useEffect(() => {
     fetch(BASE_URL + "/poses")
       .then((r) => r.json())
@@ -26,9 +30,16 @@ function App() {
   return (
     <div>
       <Header />
-      <Form poses={poses} />
-      <ClassContainer yogaclasses={yogaClasses} setYogaClasses={setYogaClasses} />
-
+      <Form
+        poses={poses}
+        yogaclasses={yogaClasses}
+        setYogaClasses={setYogaClasses}
+        onAddYogaClass={handleAddYogaClass}
+      />
+      <ClassContainer
+        yogaclasses={yogaClasses}
+        setYogaClasses={setYogaClasses}
+      />
     </div>
   );
 }

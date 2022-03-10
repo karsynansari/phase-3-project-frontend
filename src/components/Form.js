@@ -4,25 +4,27 @@ import PosesDropdown from './PosesDropdown'
 const newYogaClassObj = {
   teacher: "",
   nameOfClass: "",
-  classTime: ""
+  classTime: "", 
+  poseCard: []
 };
 
-
-function Form({ poses }) {
+function Form({ poses, setYogaClasses }) {
   const [newYogaClass, setNewYogaClass] = useState(newYogaClassObj);
 
   function handleChange(e) {
-    // console.log(e.target)
     setNewYogaClass((newYogaClassState) => ({
       ...newYogaClassState,
       [e.target.name]: e.target.value,
     }));
   }
+  
+  function handleClick() {
+    console.log("pose card clicked!")
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
-    // console.log('Clicked')
-    fetch("http://localhost:9292/yoga_classes", {
+    fetch("http://localhost:9292/yoga_class", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -31,7 +33,7 @@ function Form({ poses }) {
     })
       .then((response) => response.json())
       .then((data) =>
-        setNewYogaClass((existingYogaClasses) => [...existingYogaClasses, data])
+        setYogaClasses((existingYogaClasses) => [...existingYogaClasses, data])
       );
 
     setNewYogaClass(newYogaClassObj);
@@ -87,15 +89,21 @@ const poseCardRender = poses.map((p) => {
           </div>
           {/* card render */}
           <div className="rightSideOfForm">
-            <ul className="poseCardForm">{poseCardRender}</ul>
+            <ul
+              className="poseCardForm"
+              type="button"
+              name="poseCard"
+              value={newYogaClass.poseCard}
+              onClick={handleClick}
+            >
+            {poseCardRender}
+            </ul> 
           </div>
         </div>
         <input
           className="form-submit"
           type="submit"
-          value="Submit"
-          placeholder="Create your Class!"
-          onSubmit={handleSubmit}
+          value="Create your Class!"
         />
       </form>
     </div>

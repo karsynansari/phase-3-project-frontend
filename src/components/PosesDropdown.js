@@ -1,19 +1,30 @@
-import React from 'react'
+import React from "react";
 
+//click on div. in parent, create state in form
+//send the set state function down to poses dropdown
+//send an array of pose id
 
-
-function PosesDropdown( {  englishName, imgUrl } ) {
+function PosesDropdown({ englishName, imgUrl, setPoseIds, pose }) {
+  function handleClick() {
+    console.log("Clicked", pose.id);
+    // let selectedPoses = []
+  //  console.log(selectedPoses.push(e.target.pose.id))
+// setPoseIds((existing))
+// setPoseIds((existingPoses)=> [...existingPoses, pose.id])
+// let newArr = [...selectedPoses, pose.id]
+// console.log(newArr)
+  }
   return (
-    <div>
+    <div onClick={handleClick}>
       {/* card? */}
-      <img src={imgUrl} className="poseCards"/>
+      <img src={imgUrl} className="poseCards" />
       {englishName} <br></br>
       {/* Sanskrit Name: {sanskritName} */}
     </div>
-  )
+  );
 }
 
-export default PosesDropdown
+export default PosesDropdown;
 
 // URL for the grid codepen
 // https://codepen.io/sheefu/pen/mddGQqb

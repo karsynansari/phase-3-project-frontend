@@ -9,8 +9,12 @@ const newYogaClassObj = {
 };
 
 function Form({ poses, setYogaClasses }) {
-  const [newYogaClass, setNewYogaClass] = useState(newYogaClassObj);
-
+console.log(poses)
+ const poseIdArr = poses.map((pose) => pose.id);
+ console.log(poseIdArr);
+const [newYogaClass, setNewYogaClass] = useState(newYogaClassObj);
+const [poseIds, setPoseIds] = useState([])
+ 
   function handleChange(e) {
     setNewYogaClass((newYogaClassState) => ({
       ...newYogaClassState,
@@ -42,6 +46,8 @@ function Form({ poses, setYogaClasses }) {
   const poseCardRender = poses.map((p) => {
     return (
       <PosesDropdown
+      setPoseIds={setPoseIds}
+      pose={p}
         englishName={p.english_name}
         key={p.id}
         imgUrl={p.img_url}
@@ -54,7 +60,7 @@ function Form({ poses, setYogaClasses }) {
     <div className="form">
       <form onSubmit={handleSubmit}>
         <div className="form-name">
-          <span>New Class Form</span>
+          <span>Schedule Your Class</span>
         </div>
         <div className="form-info">
           <div className="leftSideOfForm">
@@ -104,7 +110,7 @@ function Form({ poses, setYogaClasses }) {
           </div>
         </div>
         <input
-          className="form-submit"
+          className="deleteButton"
           type="submit"
           value="Create your Class!"
           onSubmit={handleSubmit}

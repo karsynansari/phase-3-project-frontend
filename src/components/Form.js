@@ -9,7 +9,7 @@ const newYogaClassObj = {
 };
 
 function Form({ poses, setYogaClasses }) {
-console.log(poses)
+// console.log(poses)
  const poseIdArr = poses.map((pose) => pose.id);
  console.log(poseIdArr);
 const [newYogaClass, setNewYogaClass] = useState(newYogaClassObj);
@@ -90,17 +90,22 @@ console.log(poseIds)
               />
             </div>
           </div>
-          {/* card render */}
           <div className="rightSideOfForm">
             Select poses to add to yoga sequence
             <ul
               className="poseCardForm"
-              type="button"
-              name="pose_card"
-              value={newYogaClass.pose_card}
             >
               {poseCardRender}
             </ul>
+          </div>
+
+          {/* Pose ids are rendering in this div when clicked. 
+          Just need to figure out how to connect the ids to the card id 
+          and set a condition if poseIds match card ids, render card.  */}
+        {poseIds}
+          <div>
+
+
           </div>
         </div>
         <input

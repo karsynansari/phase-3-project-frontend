@@ -23,10 +23,6 @@ console.log(poseIds)
     }));
   }
 
-  function handleClick() {
-    console.log("pose card clicked!");
-  }
-
   function handleSubmit(e) {
     e.preventDefault();
     fetch("http://localhost:9292/yoga_classes", {
@@ -65,7 +61,6 @@ console.log(poseIds)
         </div>
         <div className="form-info">
           <div className="leftSideOfForm">
-            <div>
               <input
                 className="form-item"
                 type="text"
@@ -74,7 +69,6 @@ console.log(poseIds)
                 placeholder="Teacher's name:"
                 onChange={handleChange}
               />
-            </div>
             <div>
               <input
                 className="form-item"
@@ -104,7 +98,6 @@ console.log(poseIds)
               type="button"
               name="pose_card"
               value={newYogaClass.pose_card}
-              onClick={handleClick}
             >
               {poseCardRender}
             </ul>

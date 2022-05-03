@@ -9,12 +9,7 @@ const newYogaClassObj = {
 };
 
 function Form({ poses, setYogaClasses }) {
-// console.log(poses)
-//  const poseIdArr = poses.map((pose) => pose.id);
-    // map more of the object
 
-
-//  console.log(poseIdArr);
 const [newYogaClass, setNewYogaClass] = useState(newYogaClassObj);
 const [poseIds, setPoseIds] = useState([])
  
@@ -41,14 +36,14 @@ const [poseIds, setPoseIds] = useState([])
         setYogaClasses((existingYogaClasses) => [...existingYogaClasses, data])
       );
 
-    setNewYogaClass(newYogaClassObj);//if this is being used in state then why is it being pushed
+    setNewYogaClass(newYogaClassObj);
   }
 
   const poseCardRender = poses.map((p) => {
     return (
       <PosesDropdown
-      // setPoseIds={setPoseIds}
-        pose={p}  //only need p here - pass this down 
+
+        pose={p}  
         english_name={p.english_name}
         key={p.id}
         img_url={p.img_url}
@@ -56,7 +51,7 @@ const [poseIds, setPoseIds] = useState([])
       />
     );
   });
-        // tries to make a new object... seems DRY.... also not actually getting the data
+
     const yogaPoseObj ={
       // english_name: english_name,
       // id: key,
@@ -71,8 +66,7 @@ const [poseIds, setPoseIds] = useState([])
       headers: {
         "Content-Type": "application/json",
       },
-      //body: JSON.stringify(poseCardRender), //this is what I want to happen - cannot pass in JSX
-      // body: JSON.stringify(yogaPoseObj)
+
       body: JSON.stringify({yogaPoseObj})
     })
     .then(r => r.json())
@@ -120,7 +114,6 @@ const [poseIds, setPoseIds] = useState([])
               />
             </div>
           </div>
-          {/* card render */}
           <div className="rightSideOfForm">
             Select poses to add to yoga sequence
             <ul

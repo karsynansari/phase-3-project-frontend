@@ -12,6 +12,7 @@ function Form({ poses, setYogaClasses }) {
 
 const [newYogaClass, setNewYogaClass] = useState(newYogaClassObj);
 const [poseIds, setPoseIds] = useState([])
+console.log(poseIds)
  
   function handleChange(e) {
     setNewYogaClass((newYogaClassState) => ({

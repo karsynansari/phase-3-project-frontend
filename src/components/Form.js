@@ -54,9 +54,6 @@ console.log(poseIds)
   });
 
     const yogaPoseObj ={
-      // english_name: english_name,
-      // id: key,
-      // img_url: img_url
     } ;
 
     // handle pose click

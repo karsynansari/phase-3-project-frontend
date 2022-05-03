@@ -12,14 +12,14 @@ function App() {
   useEffect(() => {
     fetch(BASE_URL + "/yoga_classes")
       .then((r) => r.json())
-      // .then(data => console.log (data))
+
       .then(setYogaClasses);
   }, []);
 
   useEffect(() => {
     fetch(BASE_URL + "/poses")
       .then((r) => r.json())
-      // .then(data => console.log (data))
+
       .then(setPoses);
   }, []);
 

@@ -5,7 +5,6 @@ const newYogaClassObj = {
   teacher_name: "",
   class_name: "",
   class_time: ""
-  // pose_card: []
 };
 
 function Form({ poses, setYogaClasses }) {
@@ -95,7 +94,6 @@ const [poseIds, setPoseIds] = useState([])
               />
             </div>
           </div>
-          {/* card render */}
           <div className="rightSideOfForm">
             Select poses to add to yoga sequence
             <ul

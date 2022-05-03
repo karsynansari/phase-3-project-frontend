@@ -2,16 +2,19 @@ import React, {useState } from 'react'
 import PosesDropdown from './PosesDropdown'
 
 const newYogaClassObj = {
+  
   teacher_name: "",
   class_name: "",
   class_time: ""
-  // pose_card: []
 };
 
 function Form({ poses, setYogaClasses }) {
-console.log(poses)
- const poseIdArr = poses.map((pose) => pose.id);
- console.log(poseIdArr);
+// console.log(poses)
+//  const poseIdArr = poses.map((pose) => pose.id);
+    // map more of the object
+
+
+//  console.log(poseIdArr);
 const [newYogaClass, setNewYogaClass] = useState(newYogaClassObj);
 const [poseIds, setPoseIds] = useState([])
 console.log(poseIds)
@@ -23,10 +26,8 @@ console.log(poseIds)
     }));
   }
 
-  function handleClick() {
-    console.log("pose card clicked!");
-  }
-
+  
+  // handle form submit
   function handleSubmit(e) {
     e.preventDefault();
     fetch("http://localhost:9292/yoga_classes", {
@@ -41,21 +42,45 @@ console.log(poseIds)
         setYogaClasses((existingYogaClasses) => [...existingYogaClasses, data])
       );
 
-    setNewYogaClass(newYogaClassObj);
+    setNewYogaClass(newYogaClassObj);//if this is being used in state then why is it being pushed
   }
 
   const poseCardRender = poses.map((p) => {
     return (
       <PosesDropdown
-      setPoseIds={setPoseIds}
-      pose={p}
-        englishName={p.english_name}
+      // setPoseIds={setPoseIds}
+        pose={p}  //only need p here - pass this down 
+        english_name={p.english_name}
         key={p.id}
-        imgUrl={p.img_url}
+        img_url={p.img_url}
         sanskritName={p.sanskrit_name}
       />
     );
   });
+        // tries to make a new object... seems DRY.... also not actually getting the data
+    const yogaPoseObj ={
+      // english_name: english_name,
+      // id: key,
+      // img_url: img_url
+    } ;
+
+    // handle pose click
+  function handleClick() {
+    setPoseIds((currentState)=> [...currentState, poses.id])
+    fetch ("http://localhost:9292/yoga_classes",{
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      //body: JSON.stringify(poseCardRender), //this is what I want to happen - cannot pass in JSX
+      // body: JSON.stringify(yogaPoseObj)
+      body: JSON.stringify({yogaPoseObj})
+    })
+    .then(r => r.json())
+    .then(data => console.log(data));
+
+    }
+
 
   return (
     <div className="form">
@@ -122,3 +147,7 @@ console.log(poseIds)
 }
 
 export default Form
+
+// create a callback function for the onclick that creates an object with empty values in the function. that is where i will hopefully assign the values of the state....? 
+// 
+// 

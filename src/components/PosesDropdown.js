@@ -4,6 +4,7 @@ import React from "react";
 //send the set state function down to poses dropdown
 //send an array of pose id
 
+
 function PosesDropdown({ english_name, img_url, setPoseIds, handleClick}) {
   
 
@@ -16,6 +17,14 @@ function PosesDropdown({ english_name, img_url, setPoseIds, handleClick}) {
   
 
 
+
+
+function PosesDropdown({ englishName, imgUrl, setPoseIds, pose }) {
+  function handleClick() {
+    // console.log("Clicked", pose.id);
+    //State for pose ids is working. 
+   setPoseIds((currentState) => [...currentState, pose.id])
+  }
 
   return (
     <div onClick={handleClick}>

@@ -82,14 +82,11 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 5px;
   grid-auto-rows: minmax(100px, auto);
-  /* border-style: solid; */
-  /* border-radius: 4%; */
-  /* width: 80%; */
   padding: 1rem;
   margin-top: 1em;
   margin-bottom: 3rem;
   font-size: 2rem;
-  width: 80%;
+  width: 98%;
   /* align */
   position: relative;
   border-radius: 8px;

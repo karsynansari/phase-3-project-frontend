@@ -95,7 +95,9 @@
   border-radius: 8px;
 }
 .classCardContent{
-  text-align: center
+  text-align: center;
+  border-radius: 3px;
+  border: #DAE8F2 10px;
 }
 
 .classCardContent{
@@ -106,6 +108,7 @@
  border: none;
  color: white;
  padding: 8px 16px;
+ margin: 25px;
  text-align: center;
  text-decoration: none;
  display: inline-block;
